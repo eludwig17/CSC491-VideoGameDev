@@ -336,6 +336,9 @@ GameObject:
   - component: {fileID: 963261760}
   - component: {fileID: 963261759}
   - component: {fileID: 963261762}
+  - component: {fileID: 963261764}
+  - component: {fileID: 963261765}
+  - component: {fileID: 963261766}
   m_Layer: 0
   m_Name: cylinder
   m_TagString: Untagged
@@ -437,6 +440,59 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &963261764
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963261757}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &963261765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963261757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20bb360a1fbb74b799c0f1805e543738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::forceObjects
+  forceAmount: 15
+  forceMode: 0
+--- !u!114 &963261766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963261757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9296fb69eaa24aeb98514058fb7bef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::logCollisions
 --- !u!1 &1457412360
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,6 +633,8 @@ GameObject:
   - component: {fileID: 1582321548}
   - component: {fileID: 1582321547}
   - component: {fileID: 1582321546}
+  - component: {fileID: 1582321551}
+  - component: {fileID: 1582321552}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -704,6 +762,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1582321551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582321545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9296fb69eaa24aeb98514058fb7bef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::logCollisions
+--- !u!114 &1582321552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582321545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20bb360a1fbb74b799c0f1805e543738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::forceObjects
+  forceAmount: 15
+  forceMode: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
