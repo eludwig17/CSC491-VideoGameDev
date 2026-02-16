@@ -38,7 +38,7 @@ public class BirdController : MonoBehaviour{
 
     void OnTriggerEnter2D(Collider2D other){
         if (other.CompareTag("ScoreZone")){
-            // add game manager add score function here
+            FlapGameManager.Instance.AddScore();
         }
     }
 
