@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 445365558775614957, guid: e84f0606209d947e69cd46d49217fdb6, type: 3}
+      propertyPath: despawnX
+      value: -20
+      objectReference: {fileID: 0}
     - target: {fileID: 1351931966873132914, guid: e84f0606209d947e69cd46d49217fdb6, type: 3}
       propertyPath: m_Name
       value: Pipe Variant
