@@ -10,6 +10,7 @@ TagManager:
   - sceneObjects
   - Pipe
   - ScoreZone
+  - Ground
   layers:
   - Default
   - TransparentFX
