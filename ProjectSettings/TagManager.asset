@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - sceneObjects
   - Pipe
+  - ScoreZone
   layers:
   - Default
   - TransparentFX
