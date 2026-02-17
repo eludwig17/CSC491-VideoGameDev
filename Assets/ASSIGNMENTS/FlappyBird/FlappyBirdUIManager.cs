@@ -1,9 +1,7 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using TMPro;
 
-public class FlappyBirdUIManager : MonoBehaviour
-{
+public class FlappyBirdUIManager : MonoBehaviour {
     [Header("Main Menu")]
     public GameObject mainMenuPanel;
     public GameObject quitButton;
@@ -26,6 +24,7 @@ public class FlappyBirdUIManager : MonoBehaviour
      void Start(){
          _gameManager = FindFirstObjectByType<FlapGameManager>();
          ShowMainMenu();
+         Time.timeScale = 0f;
      }
 
      void Update(){
@@ -39,10 +38,10 @@ public class FlappyBirdUIManager : MonoBehaviour
      void ShowMainMenu(){
          _gameStarted = false;
          _isPaused = false;
-         Time.timeScale = 1f;
+         Time.timeScale = 0f;
          
          mainMenuPanel.SetActive(true);
-         hudPage.SetActive(true);
+         hudPage.SetActive(false);
          pauseMenu.SetActive(false);
          gameOverPanel.SetActive(false);
          quitButton.SetActive(true);
@@ -65,7 +64,10 @@ public class FlappyBirdUIManager : MonoBehaviour
      }
 
      void UpdateGameOverScreen(){
-         if (gameOverPanel == null) return;
+         if (gameOverPanel == null) 
+             return;
+         if (!_gameStarted)
+             return;
          
          if (FlapGameManager.IsGameOver && !gameOverPanel.activeSelf){
              gameOverPanel.SetActive(true);
@@ -82,6 +84,7 @@ public class FlappyBirdUIManager : MonoBehaviour
      }
 
      public void MainMenu(){
+         _gameStarted = false;
          ShowMainMenu();
      }
 

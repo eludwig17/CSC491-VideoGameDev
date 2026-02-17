@@ -11,10 +11,10 @@ public class PipeSpawner : MonoBehaviour {
    [SerializeField] private float maxHeight = 5f;
 
    private float timer = 0f;
-   private bool isSpawning = true;
+   private bool isSpawning = false;
 
    void Update(){
-      if (!isSpawning)
+      if (!isSpawning || FlapGameManager.IsGameOver)
          return;
       timer += Time.deltaTime;
       if (timer >= spawnInterval){
@@ -29,8 +29,12 @@ public class PipeSpawner : MonoBehaviour {
       Instantiate(pipePrefab, spawnPos, Quaternion.identity);
    }
 
-   public void StopSpawn(){
+   public void StopSpawning(){
       isSpawning = false;
+   }
+   
+   public void StartSpawning(){
+      isSpawning = true;
    }
 
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class BirdController : MonoBehaviour{
     [Header("Movement")]
@@ -12,9 +13,9 @@ public class BirdController : MonoBehaviour{
     }
 
     void Update(){
-        if (!isAlive) 
+        if (!isAlive || FlapGameManager.IsGameOver) 
             return;
-        if (Input.GetKeyDown(KeyCode.Space)){
+        if (Input.GetKeyDown(KeyCode.Space) && !IsPointerOverUI()){
             Flap();
         }
         RotateBird();
@@ -43,7 +44,23 @@ public class BirdController : MonoBehaviour{
     }
 
     void Die(){
+        if (!isAlive)
+            return;
         isAlive = false;
+        FlapGameManager.Instance.GameOver();
         Debug.Log("You lost Game Over!");
+    }
+
+    public void ResetBird(){
+        if (rb == null)
+            rb = GetComponent<Rigidbody2D>();
+        isAlive = true;
+        transform.position = Vector3.zero;
+        transform.rotation = Quaternion.identity;
+        rb.linearVelocity = Vector2.zero;
+    }
+    
+    bool IsPointerOverUI(){
+        return EventSystem.current.IsPointerOverGameObject();
     }
 }
