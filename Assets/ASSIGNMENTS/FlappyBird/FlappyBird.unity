@@ -3865,6 +3865,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817806474}
   m_CullTransparentMesh: 1
+--- !u!1 &1912454025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1912454027}
+  - component: {fileID: 1912454026}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1912454026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912454025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b48a2d38a21942cd90f6f811c01f6c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  flapSound: {fileID: 8300000, guid: e7be58c3de43e4072b96f94a5dcf2163, type: 3}
+  gameOverSound: {fileID: 8300000, guid: 358f9eddb505b491cb48dd46505b6783, type: 3}
+  scoreSound: {fileID: 8300000, guid: 2f99de951947b415c92ace8627345a17, type: 3}
+  uiSound: {fileID: 8300000, guid: a0f659eeee3124d69beb10105ecdc160, type: 3}
+  hitSound: {fileID: 8300000, guid: 78be640d1f0ad4355a50af8751005a20, type: 3}
+  backgroundMusic: {fileID: 8300000, guid: afc97bba7e40646299bc1e410445a5f3, type: 3}
+  musicVolume: 0.495
+--- !u!4 &1912454027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912454025}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.56879, y: -0.70359, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1925271860
 GameObject:
   m_ObjectHideFlags: 0
@@ -4274,6 +4325,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 845516413}
+        m_TargetAssemblyTypeName: FlappyBirdUIManager, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5056,3 +5119,4 @@ SceneRoots:
   - {fileID: 100980875}
   - {fileID: 1141637099}
   - {fileID: 845516412}
+  - {fileID: 1912454027}

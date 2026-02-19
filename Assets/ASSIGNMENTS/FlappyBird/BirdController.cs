@@ -24,6 +24,8 @@ public class BirdController : MonoBehaviour{
     void Flap(){
         rb.linearVelocity = Vector2.zero;
         rb.linearVelocity = new Vector2(0, flapStrength);
+        AudioManager.Instance.playFlap();
+
     }
 
     void RotateBird(){
@@ -35,12 +37,14 @@ public class BirdController : MonoBehaviour{
         if (collision.gameObject.CompareTag("Pipe") || collision.gameObject.CompareTag("Ground")){
             Die();
         }
+        AudioManager.Instance.playHit();
     }
 
     void OnTriggerEnter2D(Collider2D other){
         if (other.CompareTag("ScoreZone")){
             FlapGameManager.Instance.AddScore();
         }
+        AudioManager.Instance.playScore();
     }
 
     void Die(){
@@ -48,7 +52,7 @@ public class BirdController : MonoBehaviour{
             return;
         isAlive = false;
         FlapGameManager.Instance.GameOver();
-        Debug.Log("You lost Game Over!");
+        AudioManager.Instance.playGameOver();
     }
 
     public void ResetBird(){

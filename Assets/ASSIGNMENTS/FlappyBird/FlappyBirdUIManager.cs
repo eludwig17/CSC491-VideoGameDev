@@ -25,6 +25,9 @@ public class FlappyBirdUIManager : MonoBehaviour {
          _gameManager = FindFirstObjectByType<FlapGameManager>();
          ShowMainMenu();
          Time.timeScale = 0f;
+         AudioManager.Instance.RegisterAllButtons();
+         AudioManager.Instance.startMusic();
+
      }
 
      void Update(){
@@ -92,12 +95,14 @@ public class FlappyBirdUIManager : MonoBehaviour {
          _isPaused = true;
          Time.timeScale = 0f;
          pauseMenu.SetActive(true);
+         AudioManager.Instance.stopMusic();
      }
 
      public void ResumeGame(){
          _isPaused = false;
          Time.timeScale = 1f;
          pauseMenu.SetActive(false);
+         AudioManager.Instance.startMusic();
      }
 
      void PauseInput(){
