@@ -4734,7 +4734,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -1582377936, guid: 087dd94d4b6bd47afa0cca363dafae96, type: 3}
+  m_Sprite: {fileID: 1919399565, guid: 727017b1cd2eb44deb13917189441f13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4835,6 +4835,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BirdController
   flapStrength: 8
+  ceilingBounds: 10
+  flapSprites:
+  - {fileID: 1919399565, guid: 727017b1cd2eb44deb13917189441f13, type: 3}
+  - {fileID: -970174672, guid: 727017b1cd2eb44deb13917189441f13, type: 3}
+  - {fileID: 1872108748, guid: 727017b1cd2eb44deb13917189441f13, type: 3}
+  - {fileID: 1615230185, guid: 727017b1cd2eb44deb13917189441f13, type: 3}
+  flapRate: 0.5
+  spinRate: 1000
 --- !u!1 &2060380529
 GameObject:
   m_ObjectHideFlags: 0

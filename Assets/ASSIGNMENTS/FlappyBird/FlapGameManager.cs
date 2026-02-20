@@ -57,6 +57,10 @@ public class FlapGameManager : MonoBehaviour {
         foreach (GameObject pipe in pipes){
             Destroy(pipe);
         }
+        GameObject[] scoreZones = GameObject.FindGameObjectsWithTag("ScoreZone");
+        foreach (GameObject zone in scoreZones){
+            Destroy(zone);
+        }
     }
     
     public void AddScore(){
