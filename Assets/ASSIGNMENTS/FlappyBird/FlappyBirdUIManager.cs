@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class FlappyBirdUIManager : MonoBehaviour {
     [Header("Main Menu")]
@@ -17,6 +18,10 @@ public class FlappyBirdUIManager : MonoBehaviour {
     public GameObject gameOverPanel;
     public TextMeshProUGUI gameOverHighScoreText; 
     
+    [Header("Volume Settings")]
+    public Slider volSlider;
+    public TextMeshProUGUI volText;
+    
     private FlapGameManager _gameManager;
     private bool _isPaused = false;
     private bool _gameStarted = false;
@@ -27,7 +32,11 @@ public class FlappyBirdUIManager : MonoBehaviour {
          Time.timeScale = 0f;
          AudioManager.Instance.RegisterAllButtons();
          AudioManager.Instance.startMusic();
-
+         float saved = PlayerPrefs.GetFloat("Volume", 0.5f);
+         volSlider.value = saved;
+         UpdateVolText(saved);
+         AudioManager.Instance.SetVol(saved);
+         volSlider.onValueChanged.AddListener(VolChange);
      }
 
      void Update(){
@@ -140,4 +149,15 @@ public class FlappyBirdUIManager : MonoBehaviour {
          UnityEditor.EditorApplication.isPlaying = false;
          #endif
      }
+
+     void VolChange(float value){
+         AudioManager.Instance.SetVol(value);
+         UpdateVolText(value);
+         PlayerPrefs.SetFloat("Volume", value);
+     }
+
+     void UpdateVolText(float value){
+         volText.text = "VOLUME: " + Mathf.RoundToInt(value * 100f) + "%";
+     }
+     
 }

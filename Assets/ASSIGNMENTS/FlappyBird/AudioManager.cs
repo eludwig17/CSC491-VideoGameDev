@@ -49,4 +49,9 @@ public class AudioManager : MonoBehaviour{
         foreach (Button btn in FindObjectsByType<Button>(FindObjectsSortMode.None))
             btn.onClick.AddListener(playClick);
     }
+
+    public void SetVol(float value){
+        musicSource.volume = value;
+        effectSource.volume = value;
+    }
 }
