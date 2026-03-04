@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 140985922}
   - component: {fileID: 140985921}
   - component: {fileID: 140985920}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,51 @@ Transform:
   m_GameObject: {fileID: 140985919}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 5, z: 0}
+  m_LocalPosition: {x: -0.378, y: 2.793, z: 0.857}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &477057672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 477057674}
+  - component: {fileID: 477057673}
+  m_Layer: 0
+  m_Name: SimplePickupController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &477057673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477057672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a4ef10aff2f44c5a5d05efa19d235f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimplePickupSystem
+--- !u!4 &477057674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477057672}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.82259, y: 1, z: 1.29583}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -243,7 +287,7 @@ GameObject:
   - component: {fileID: 1044509407}
   - component: {fileID: 1044509406}
   - component: {fileID: 1044509405}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,13 +382,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044509404}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.44373748, w: 0.8961569}
+  m_LocalPosition: {x: -2.645, y: 4.044, z: 0.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 52.685}
 --- !u!1 &1047903931
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,7 +401,7 @@ GameObject:
   - component: {fileID: 1047903934}
   - component: {fileID: 1047903933}
   - component: {fileID: 1047903932}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,7 +514,7 @@ GameObject:
   - component: {fileID: 1421973491}
   - component: {fileID: 1421973490}
   - component: {fileID: 1421973489}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -564,7 +608,7 @@ Transform:
   m_GameObject: {fileID: 1421973488}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: -2.03, y: 2.71, z: 2.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -846,7 +890,7 @@ GameObject:
   - component: {fileID: 1876174265}
   - component: {fileID: 1876174264}
   - component: {fileID: 1876174263}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ramp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -939,13 +983,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876174262}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.43, y: 2.29, z: 1.29583}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.08715578, w: 0.9961947}
+  m_LocalPosition: {x: -1.3783, y: 0.553, z: 0.984}
+  m_LocalScale: {x: 6.9104037, y: -2.2103767, z: 5.13613}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -10}
 --- !u!1 &1912415329
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,7 +1002,7 @@ GameObject:
   - component: {fileID: 1912415332}
   - component: {fileID: 1912415331}
   - component: {fileID: 1912415330}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1070,3 +1114,4 @@ SceneRoots:
   - {fileID: 1044509408}
   - {fileID: 1912415333}
   - {fileID: 1876174266}
+  - {fileID: 477057674}
