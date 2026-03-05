@@ -74,9 +74,6 @@ namespace ASSIGNMENTS.IntroToRaycasts{
         }
 
         void DebugRay(){
-            Debug.Log("Hit Pickup: " + _hitPickup + " | Hit Environment: " + _hitEnvironment);
-
-            
             Color rayColor;
             float drawLength = maxDistance;
 
