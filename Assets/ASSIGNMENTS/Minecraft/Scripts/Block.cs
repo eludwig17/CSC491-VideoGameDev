@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class Block : MonoBehaviour{
-    public float durabilitySeconds = 1.5f;
+    public float durabilitySeconds = 0.5f;
     public ParticleSystem breakingParticlesPrefab;
     ParticleSystem breakingParticles;
     float lastBreakProgress;
