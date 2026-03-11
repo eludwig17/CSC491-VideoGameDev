@@ -55,8 +55,10 @@ public class mcPlayerController : MonoBehaviour {
             moveDir.Normalize();
         float speed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed;
         
-        Vector3 targetPos = rb.position + moveDir * speed * Time.fixedDeltaTime;
-        rb.MovePosition(targetPos);
+        var velocity = moveDir * speed * Time.fixedDeltaTime * 100;
+        velocity.y = rb.linearVelocity.y;
+        
+        rb.linearVelocity=velocity;
     }
 
     void Jump(){
