@@ -7,7 +7,6 @@ public class WorldGeneration : MonoBehaviour{
     public int height = 3;
 
     void Start(){
-        GenerateWorld();
     }
 
     void GenerateWorld(){
