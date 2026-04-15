@@ -842,7 +842,6 @@ GameObject:
   m_Component:
   - component: {fileID: 738778818}
   - component: {fileID: 738778819}
-  - component: {fileID: 738778820}
   - component: {fileID: 738778821}
   m_Layer: 0
   m_Name: WorldGeneration
@@ -882,19 +881,6 @@ MonoBehaviour:
   width: 16
   length: 16
   height: 3
---- !u!114 &738778820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 738778817}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f64920b8e3eda48c3866337870dddb03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ASSIGNMENTS.Minecraft.Scripts.MeshGenerator
-  blankMat: {fileID: 2100000, guid: 6cc1c033e4b1948178d6afebf79d6376, type: 2}
 --- !u!114 &738778821
 MonoBehaviour:
   m_ObjectHideFlags: 0
