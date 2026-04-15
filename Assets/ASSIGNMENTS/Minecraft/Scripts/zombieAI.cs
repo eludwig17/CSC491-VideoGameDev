@@ -120,7 +120,7 @@ namespace ASSIGNMENTS.Minecraft.Scripts {
             if (path == null || pathIndex >= path.Count) return;
 
             float distToTarget = Vector3.Distance(transform.position, target.position);
-            if (distToTarget < 1.5f) return;
+            if (distToTarget < 3f) return;
 
             float yOffset = 0.5f;
             Vector3 targetPos = new Vector3(path[pathIndex].x, path[pathIndex].y + yOffset, path[pathIndex].z);
