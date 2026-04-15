@@ -5,22 +5,22 @@ namespace ASSIGNMENTS.Minecraft.Scripts{
         public Material blankMat;
         private static Mesh _sharedCubeMesh;
 
-        void Start(){
-            if (_sharedCubeMesh == null)
-                _sharedCubeMesh = GenNewMesh();
-
-            WorldGeneration worldGen = GetComponent<WorldGeneration>();
-            if (worldGen == null){
-                Debug.LogError("World Generation script isn't found");
-            }
-            for (int x = 0; x < worldGen.width; x++){
-                for (int z = 0; z < worldGen.length; z++){
-                    for (int y = 0; y < worldGen.height; y++){
-                        SpawnBlock(new Vector3(x, y, z));
-                    }
-                }
-            }
-        }
+        // void Start(){
+        //     if (_sharedCubeMesh == null)
+        //         _sharedCubeMesh = GenNewMesh();
+        //
+        //     WorldGeneration worldGen = GetComponent<WorldGeneration>();
+        //     if (worldGen == null){
+        //         Debug.LogError("World Generation script isn't found");
+        //     }
+        //     for (int x = 0; x < worldGen.width; x++){
+        //         for (int z = 0; z < worldGen.length; z++){
+        //             for (int y = 0; y < worldGen.height; y++){
+        //                 SpawnBlock(new Vector3(x, y, z));
+        //             }
+        //         }
+        //     }
+        // }
 
         public GameObject SpawnBlock(Vector3 position){
             GameObject block = new GameObject("Block");
