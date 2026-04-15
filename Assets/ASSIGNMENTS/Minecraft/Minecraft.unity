@@ -1237,7 +1237,11 @@ MonoBehaviour:
   blockPrefab: {fileID: 0}
   width: 25
   length: 25
-  height: 3
+  baseHeight: 5
+  seed: 42
+  noiseScale: 5
+  player: {fileID: 2015840904}
+  zombie: {fileID: 1494538401}
 --- !u!114 &738778821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2905,7 +2909,7 @@ MonoBehaviour:
   groundCheckDist: 1.1
   groundMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 512
 --- !u!114 &2015840909
 MonoBehaviour:
   m_ObjectHideFlags: 0

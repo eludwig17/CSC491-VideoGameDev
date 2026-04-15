@@ -29,11 +29,11 @@ public class mcPlayerController : MonoBehaviour {
     }
 
     void Update() {
-        MouseMovement();
         Jump();
     }
 
     void FixedUpdate(){
+        MouseMovement();
         Movement();
     }
 
@@ -54,11 +54,9 @@ public class mcPlayerController : MonoBehaviour {
         if (moveDir.magnitude > 1f)
             moveDir.Normalize();
         float speed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed;
-        
-        var velocity = moveDir * speed * Time.fixedDeltaTime * 100;
-        velocity.y = rb.linearVelocity.y;
-        
-        rb.linearVelocity=velocity;
+        Vector3 vel = moveDir * speed;
+        vel.y = rb.linearVelocity.y;
+        rb.linearVelocity = vel;
     }
 
     void Jump(){
