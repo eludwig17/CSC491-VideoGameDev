@@ -1,3 +1,4 @@
+using ASSIGNMENTS.Minecraft.Scripts;
 using UnityEngine;
 
 public class BlockInteraction : MonoBehaviour{
@@ -24,6 +25,7 @@ public class BlockInteraction : MonoBehaviour{
         if (Input.GetMouseButtonUp(1)){
             PlaceBlock();
 ;        }
+        WorldObserver.NotifyWorldChanged();
     }
 
     void BreakBlock(){

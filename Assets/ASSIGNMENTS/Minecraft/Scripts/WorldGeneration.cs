@@ -3,8 +3,8 @@ using UnityEngine;
 namespace ASSIGNMENTS.Minecraft.Scripts{
     public class WorldGeneration : MonoBehaviour{
         public GameObject blockPrefab;
-        public int width = 16;
-        public int length = 16;
+        public int width = 25;
+        public int length = 25;
         public int height = 3;
 
         private CubeSpawner cubeSpawner;
