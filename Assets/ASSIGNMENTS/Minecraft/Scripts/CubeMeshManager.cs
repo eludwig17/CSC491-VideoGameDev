@@ -11,7 +11,9 @@ namespace ASSIGNMENTS.Minecraft.Scripts{
          * block - top, side, bottom
          * grass (0,0) (3,0) (2,0)
          * dirt (2,0) (2,0) (2,0) 
-         * stone (1,1) (1,1) (1,1) 
+         * stone (1,1) (1,1) (1,1)
+         * log (5,1) (4,1) (5,1)
+         * lead (4,3) (4,3) (4,3)
          */        
        
         private static readonly Dictionary<CubeType, CubeUV> cubeUVs =
@@ -31,7 +33,17 @@ namespace ASSIGNMENTS.Minecraft.Scripts{
                         top: new Vector2Int(1, 1),
                         side: new Vector2Int(1, 1),
                         bottom: new Vector2Int(1, 1))
-                }
+                }, {
+                    CubeType.Log, new CubeUV(
+                        top: new Vector2Int(5, 1),
+                        side: new Vector2Int(4, 1),
+                        bottom: new Vector2Int(5, 1))
+                }, {
+                    CubeType.Leaf, new CubeUV(
+                        top: new Vector2Int(4,3),
+                        side: new Vector2Int(4, 3),
+                        bottom: new Vector2Int(4, 3))
+                }, 
             };
 
         private Dictionary<CubeType, Mesh> meshCache = new Dictionary<CubeType, Mesh>();
