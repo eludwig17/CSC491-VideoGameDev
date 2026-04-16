@@ -7,8 +7,8 @@ namespace ASSIGNMENTS.Minecraft.Scripts{
     public Vector2Int bottom;
  
     public CubeUV(Vector2Int top, Vector2Int side, Vector2Int bottom){
-        this.top    = top;
-        this.side   = side;
+        this.top = top;
+        this.side = side;
         this.bottom = bottom;
     }
 }

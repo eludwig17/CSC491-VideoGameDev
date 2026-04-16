@@ -43,6 +43,21 @@ namespace ASSIGNMENTS.Minecraft.Scripts{
                         top: new Vector2Int(4,3),
                         side: new Vector2Int(4, 3),
                         bottom: new Vector2Int(4, 3))
+                }, {
+                    CubeType.Iron, new CubeUV(
+                        top: new Vector2Int(1,2),
+                        side: new Vector2Int(1, 2),
+                        bottom: new Vector2Int(1, 2))
+                }, {
+                    CubeType.Coal, new CubeUV(
+                        top: new Vector2Int(2,2),
+                        side: new Vector2Int(2, 2),
+                        bottom: new Vector2Int(2, 2))
+                }, {
+                    CubeType.Diamond, new CubeUV(
+                        top: new Vector2Int(2,3),
+                        side: new Vector2Int(2, 3),
+                        bottom: new Vector2Int(2, 3))
                 }, 
             };
 

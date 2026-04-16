@@ -1235,11 +1235,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ASSIGNMENTS.Minecraft.Scripts.WorldGeneration
   blockPrefab: {fileID: 0}
-  width: 100
-  length: 100
-  baseHeight: 5
-  seed: 42
-  noiseScale: 5
+  width: 50
+  length: 50
+  baseHeight: 15
+  seed: 60
+  noiseScale: 8
   player: {fileID: 2015840904}
   zombie: {fileID: 1494538401}
   treeChance: 0.05
