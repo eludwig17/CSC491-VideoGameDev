@@ -2,6 +2,8 @@ namespace ASSIGNMENTS.Minecraft.Scripts{
 	public enum CubeType{
 		Dirt,
 		Grass,
-		Stone
+		Stone,
+		Log,
+		Leaf
 	}
 }
