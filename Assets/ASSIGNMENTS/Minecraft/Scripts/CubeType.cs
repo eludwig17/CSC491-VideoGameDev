@@ -4,6 +4,9 @@ namespace ASSIGNMENTS.Minecraft.Scripts{
 		Grass,
 		Stone,
 		Log,
-		Leaf
+		Leaf,
+		Coal,
+		Iron,
+		Diamond
 	}
 }
