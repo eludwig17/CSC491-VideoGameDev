@@ -1237,13 +1237,20 @@ MonoBehaviour:
   blockPrefab: {fileID: 0}
   width: 50
   length: 50
-  baseHeight: 15
+  baseHeight: 10
   seed: 60
   noiseScale: 8
   player: {fileID: 2015840904}
   zombie: {fileID: 1494538401}
-  treeChance: 0.05
+  treeChance: 0.123
   treeDist: 10
+  oreVeinChance: 0.15
+  coalChance: 0.6
+  ironChance: 0.3
+  diamondChance: 0.1
+  coalVeinSize: 12
+  ironVeinSize: 8
+  diamondVeinSize: 4
 --- !u!114 &738778821
 MonoBehaviour:
   m_ObjectHideFlags: 0

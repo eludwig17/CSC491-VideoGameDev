@@ -18,10 +18,18 @@ namespace ASSIGNMENTS.Minecraft.Scripts{
         [Header("Trees")] [Range(0f, 1f)] public float treeChance = 0.05f;
         public float treeDist = 10f;
         
+        [Header("Ore Veins")] [Range(0f, 1f)] public float oreVeinChance = 0.15f;
+        [Range(0f, 1f)] public float coalChance = 0.6f;
+        [Range(0f, 1f)] public float ironChance = 0.3f;
+        [Range(0f, 1f)] public float diamondChance = 0.1f;
+        public int coalVeinSize = 12;
+        public int ironVeinSize = 8;
+        public int diamondVeinSize = 4;
+        
         [Header("Dirt Layers")]
         private int DirtLayers = 3;
         private CubeSpawner cubeSpawner;
-        private HashSet<Vector3Int> occupiedBlocks = new HashSet<Vector3Int>();
+        private Dictionary<Vector3Int, CubeType> occupiedBlocks = new Dictionary<Vector3Int, CubeType>();
         private bool needsReposition = true;
 
         void Awake(){
@@ -52,10 +60,11 @@ namespace ASSIGNMENTS.Minecraft.Scripts{
                     Vector3Int pos = new Vector3Int(x, y, z);
                     CubeType type = GetBlockType(y, colHeight);
                     cubeSpawner.SpawnCube(pos, type);
-                    occupiedBlocks.Add(pos);
+                    occupiedBlocks[pos] = type;
                 }
             }
             genTrees();
+            genOreVeins();
         }
         
         int getColHeight(int x, int z) {
@@ -134,9 +143,56 @@ namespace ASSIGNMENTS.Minecraft.Scripts{
 
         void placeBlock(int x, int y, int z, CubeType type) {
             Vector3Int pos = new Vector3Int(x, y, z);
-            if (occupiedBlocks.Contains(pos)) return;
-            occupiedBlocks.Add(pos);
+            if (!occupiedBlocks.TryAdd(pos, type)) return;
             cubeSpawner.SpawnCube(pos, type);
+        }
+        
+        void genOreVeins() {
+            System.Random rng = new System.Random(seed + 1);
+            for (int x = 0; x < width; x++)
+            for (int z = 0; z < length; z++) {
+                if (rng.NextDouble() > oreVeinChance) continue;
+                int colHeight = getColHeight(x, z);
+                if (colHeight < 2) continue;
+                int startY = rng.Next(0, colHeight - 1);
+                CubeType oreType = pickOreType(rng);
+                int veinSize = getVeinSize(oreType);
+                growVein(new Vector3Int(x, startY, z), oreType, veinSize, rng);
+            }
+        }
+
+        void growVein(Vector3Int start, CubeType oreType, int steps, System.Random rng) {
+            Vector3Int cur = start;
+            Vector3Int[] dirs = {
+                Vector3Int.left, Vector3Int.right,
+                Vector3Int.forward, Vector3Int.back,
+                Vector3Int.up, Vector3Int.down
+            };
+            for (int i = 0; i < steps; i++) {
+                if (!inBounds(cur)) break;
+                if (occupiedBlocks.TryGetValue(cur, out CubeType t) && t == CubeType.Stone) {
+                    cubeSpawner.SpawnCube(cur, oreType);
+                    occupiedBlocks[cur] = oreType;
+                }
+                cur += dirs[rng.Next(0, dirs.Length)];
+            }
+        }
+        
+        CubeType pickOreType(System.Random rng) {
+            double roll = rng.NextDouble();
+            if (roll < coalChance) return CubeType.Coal;
+            if (roll < coalChance + ironChance) return CubeType.Iron;
+            return CubeType.Diamond;
+        }
+
+        int getVeinSize(CubeType t) {
+            if (t == CubeType.Coal) return coalVeinSize;
+            if (t == CubeType.Iron) return ironVeinSize;
+            return diamondVeinSize;
+        }
+
+        bool inBounds(Vector3Int p) {
+            return p.x >= 0 && p.x < width && p.z >= 0 && p.z < length && p.y >= 0;
         }
     }
 }
